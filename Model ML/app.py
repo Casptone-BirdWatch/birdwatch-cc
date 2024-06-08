@@ -30,44 +30,44 @@ bird_descriptions = {
         "genus": "Polyplectron"
     },
     "BURUNG CICA DAUN KALIMANTAN": {
-        "deskripsi": "Deskripsi untuk Burung Cica Daun Kalimantan belum tersedia.",
-        "famili": "Cycadaceae",
-        "genus": "Cycas"
+        "deskripsi": "Burung Cica Daun Kalimantan, dikenal dengan nama ilmiah Chloropsis cyanopogon, adalah burung berukuran kecil hingga sedang dengan bulu berwarna hijau cerah yang mencolok, disertai dengan aksen warna biru dan kuning di beberapa bagian tubuh. Burung ini memiliki paruh hitam yang tajam dan melengkung, cocok untuk memakan serangga, buah-buahan, dan nektar. Burung Cica Daun Kalimantan adalah penghuni hutan-hutan tropis dan subtropis di dataran rendah Kalimantan, Sumatra, dan Semenanjung Malaya. Kicauannya merdu dan variatif, sering digunakan untuk komunikasi antarindividu, terutama pada musim kawin. Meskipun menghadapi ancaman dari perusakan habitat dan perdagangan burung liar, spesies ini belum termasuk dalam kategori terancam punah menurut IUCN.",
+        "famili": "Chloropseidae",
+        "genus": "Chloropsis"
     },
     "BURUNG JALAK BALI": {
-        "deskripsi": "Deskripsi untuk Burung Jalak Bali belum tersedia.",
+        "deskripsi": "Burung Jalak Bali, dikenal dengan nama ilmiah Leucopsar rothschildi, adalah burung endemik dari Bali, Indonesia. Burung ini memiliki penampilan yang sangat mencolok dengan bulu berwarna putih bersih, ujung sayap dan ekor berwarna hitam, serta kulit sekitar mata yang berwarna biru cerah. Burung Jalak Bali memiliki paruh kuning keabu-abuan dan kaki berwarna abu-abu. Burung ini biasanya ditemukan di hutan mangrove dan kawasan hutan lainnya di Bali. Mereka memakan berbagai jenis makanan seperti serangga, buah-buahan, dan biji-bijian. Kicauan Jalak Bali terdiri dari suara yang bervariasi, termasuk siulan dan panggilan yang keras. Burung ini termasuk dalam kategori sangat terancam punah menurut IUCN, terutama karena perburuan liar dan hilangnya habitat. Upaya konservasi yang ketat sedang dilakukan untuk melindungi dan meningkatkan populasi mereka di alam liar.",
         "famili": "Sturnidae",
         "genus": "Leucopsar"
     },
     "BURUNG JUNAI EMAS": {
-        "deskripsi": "Deskripsi untuk Burung Junai Emas belum tersedia.",
+        "deskripsi": "Burung Junai Emas, dikenal dengan nama ilmiah Caloenas nicobarica, adalah salah satu spesies burung merpati yang menonjol dengan bulu yang sangat indah dan unik. Burung ini memiliki bulu tubuh berwarna hijau metalik dengan kilauan emas dan tembaga, yang membuatnya terlihat sangat menarik di bawah sinar matahari. Bagian lehernya dihiasi dengan bulu-bulu panjang yang menjuntai, memberikan penampilan yang anggun. Ekor burung ini berwarna putih, yang kontras dengan warna tubuhnya yang gelap. Junai Emas biasanya ditemukan di hutan-hutan tropis dan subtropis di kepulauan Nicobar, Andaman, dan beberapa pulau di kawasan Asia Tenggara, termasuk Indonesia dan Filipina. Mereka sering memakan buah-buahan, biji-bijian, dan serangga kecil. Burung ini berperan penting dalam ekosistem sebagai penyebar biji-bijian, membantu regenerasi hutan. Meskipun belum masuk dalam kategori terancam punah, populasi Junai Emas terancam oleh perusakan habitat dan perburuan liar.",
         "famili": "Columbidae",
-        "genus": "Chalcophaps"
+        "genus": "Caloenas"
     },
     "BURUNG MALEO": {
-        "deskripsi": "Deskripsi untuk Burung Maleo belum tersedia.",
+        "deskripsi": "Burung Maleo, dengan nama ilmiah Macrocephalon maleo, adalah burung endemik Sulawesi yang terkenal dengan kebiasaannya bertelur di tanah panas atau di dekat sumber panas bumi. Burung ini memiliki tubuh berwarna hitam dan putih, dengan wajah merah jambu dan paruh kuning. Betina menggali lubang di pasir pantai atau tanah vulkanik untuk bertelur, dan telur-telur tersebut diinkubasi oleh panas dari matahari atau sumber panas bumi. Anak burung Maleo yang baru menetas dapat terbang dan hidup mandiri segera setelah keluar dari telur. Populasi burung ini terancam oleh perusakan habitat dan pengambilan telur secara ilegal.",
         "famili": "Megapodiidae",
         "genus": "Macrocephalon"
     },
     "BURUNG PENCUK ULAR ASIA": {
-        "deskripsi": "Deskripsi untuk Burung Pencuk Ular Asia belum tersedia.",
-        "famili": "Cuculidae",
-        "genus": "Hierococcyx"
+        "deskripsi": "Burung Pencuk Ular Asia, dikenal dengan nama ilmiah Anhinga melanogaster, adalah burung air yang tersebar luas di Asia Selatan dan Asia Tenggara. Burung ini memiliki leher yang panjang dan ramping, mirip dengan ular, serta tubuh berwarna gelap dengan kilauan metalik. Mereka biasanya ditemukan di danau, sungai, dan rawa, di mana mereka berburu ikan dengan menyelam dan menggunakan lehernya yang panjang untuk menangkap mangsa. Setelah berburu, mereka sering terlihat berjemur dengan sayap terbuka untuk mengeringkan bulu mereka.",
+        "famili": "Anhingidae",
+        "genus": "Anhinga"
     },
     "BURUNG SEMPIDAN KALIMANTAN": {
-        "deskripsi": "Deskripsi untuk Burung Sempidan Kalimantan belum tersedia.",
-        "famili": "Bucerotidae",
-        "genus": "Anthracoceros"
+        "deskripsi": "Burung Sempidan Kalimantan, atau dikenal dengan nama ilmiah Lophura bulweri, adalah burung yang endemik di hutan-hutan tropis Kalimantan. Burung ini memiliki bulu yang indah dengan warna dominan biru metalik dan putih. Burung jantan memiliki ekor panjang yang menjuntai dan bulu hiasan di kepala yang berwarna cerah, sedangkan betina memiliki bulu yang lebih kusam. Mereka hidup di hutan primer dan mencari makan di lantai hutan berupa biji-bijian, serangga, dan buah-buahan.",
+        "famili": "Phasianidae",
+        "genus": "Lophura"
     },
     "BURUNG SEMPUR HUJAN DARAT": {
-        "deskripsi": "Deskripsi untuk Burung Sempur Hujan Darat belum tersedia.",
-        "famili": "Pycnonotidae",
-        "genus": "Pycnonotus"
+        "deskripsi": "Burung Sempur Hujan Darat, dikenal dengan nama ilmiah Scissirostrum dubium, adalah burung yang ditemukan di Sulawesi. Burung ini memiliki bulu berwarna abu-abu dengan bagian kepala berwarna hitam mengilap. Mereka hidup berkelompok dan sering ditemukan di hutan-hutan dan lahan pertanian, di mana mereka mencari makan berupa serangga dan buah-buahan. Burung ini dikenal karena kebiasaan bersarangnya yang unik, di mana mereka membuat sarang dari ranting-ranting yang ditempatkan di pohon-pohon besar.",
+        "famili": "Sturnidae",
+        "genus": "Scissirostrum"
     },
     "BURUNG TIONG BATU KALIMANTAN": {
-        "deskripsi": "Deskripsi untuk Burung Tiong Batu Kalimantan belum tersedia.",
-        "famili": "Sturnidae",
-        "genus": "Gracula"
+        "deskripsi": "Burung Tiong Batu Kalimantan, atau dikenal dengan nama ilmiah Pityriasis gymnocephala, adalah burung yang endemik di Kalimantan. Burung ini memiliki penampilan yang unik dengan kepala botak berwarna merah cerah dan bulu tubuh yang hitam. Mereka hidup di hutan-hutan tropis dataran rendah dan hutan pegunungan, di mana mereka memakan serangga, buah-buahan, dan biji-bijian. Burung ini sering ditemukan dalam kelompok kecil dan terkenal karena suaranya yang keras dan berisik.",
+        "famili": "Pityriaseidae",
+        "genus": "Pityriasis"
     }
 }
 
