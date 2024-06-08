@@ -18,7 +18,7 @@ const verifyToken = async (req, res, next) => {
   const idToken = req.headers.authorization && req.headers.authorization.split('Bearer ')[1];
   
   if (!idToken) {
-    return res.status(403).send('No token provided');
+    return res.status(403).send('Token pengguna tidak ditemukan!');
   }
 
   try {
@@ -27,7 +27,7 @@ const verifyToken = async (req, res, next) => {
     next();
   } catch (error) {
     console.error(error);
-    res.status(403).send('Unauthorized');
+    res.status(403).send('Oopss, pengguna belum terautentikasi');
   }
 };
 
@@ -64,7 +64,7 @@ app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
       return res.status(500).send('Invalid response from prediction model');
     }
 
-    // Simpan hasil prediksi ke Firestore tanpa imageUrl
+    // Simpan hasil prediksi ke Firestore
     const userId = req.user.uid;
     const docRef = await db.collection('predictions').add({
       userId,
@@ -72,10 +72,11 @@ app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
       Deskripsi,
       Famili,
       Genus,
+      imageUrl: publicUrl,
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-     // Mengembalikan respons dengan imageUrl
+     // Mengembalikan respons
     res.status(200).json({
       id: docRef.id,
       JenisBurung,
@@ -95,25 +96,39 @@ app.post('/bookmark', verifyToken, async (req, res) => {
   const { predictionId } = req.body;
   const userId = req.user.uid;
 
-  try {
-    const predictionRef = db.collection('predictions').doc(predictionId);
-    const predictionSnapshot = await predictionRef.get();
+  if (!predictionId) {
+    return res.status(400).send('No prediction ID provided.');
+  }
 
-    if (!predictionSnapshot.exists) {
+  try {
+    const predictionDoc = await db.collection('predictions').doc(predictionId).get();
+
+    if (!predictionDoc.exists) {
       return res.status(404).send('Prediction not found.');
     }
 
-    const predictionData = predictionSnapshot.data();
-    const { JenisBurung, Deskripsi, Famili, Genus, imageUrl } = predictionData;
+    const predictionData = predictionDoc.data();
 
-    const docRef = await db.collection('bookmarks').add({
+    if (!predictionData.imageUrl) {
+      return res.status(500).send('No imageUrl found in prediction data.');
+    }
+
+    const bookmarkRef = await db.collection('bookmarks').add({
       userId,
-      prediction: { JenisBurung, Deskripsi, Famili, Genus },
-      imageUrl,
+      predictionId,
+      JenisBurung: predictionData.JenisBurung,
+      Deskripsi: predictionData.Deskripsi,
+      Famili: predictionData.Famili,
+      Genus: predictionData.Genus,
+      imageUrl: predictionData.imageUrl,
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-    res.status(200).send({ id: docRef.id, message: 'Bookmark added' });
+    res.status(200).send({ 
+      id: bookmarkRef.id, 
+      message: 'Bookmark berhasil ditambahkan', 
+      imageUrl: predictionData.imageUrl 
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal server error');
@@ -127,7 +142,7 @@ app.delete('/bookmark/:id', verifyToken, async (req, res) => {
   try {
     await db.collection('bookmarks').doc(bookmarkId).delete();
 
-    res.status(200).send('Bookmark deleted');
+    res.status(200).send('Bookmark berhasil dihapus');
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal server error');
