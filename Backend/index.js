@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const axios = require('axios');
-const { db, bucket } = require('./firebaseConfig');
+const { db, bucket } = require('./firebaseConfig'); // impor konfigurasi dari firebaseConfig.js
 const FormData = require('form-data');
 const admin = require('firebase-admin');
 
@@ -13,26 +13,8 @@ const upload = multer({ storage: multer.memoryStorage() });
 // Middleware untuk parsing JSON
 app.use(express.json());
 
-// Middleware untuk memverifikasi token ID Firebase
-const verifyToken = async (req, res, next) => {
-  const idToken = req.headers.authorization && req.headers.authorization.split('Bearer ')[1];
-  
-  if (!idToken) {
-    return res.status(403).send('Token pengguna tidak ditemukan!');
-  }
-
-  try {
-    const decodedToken = await admin.auth().verifyIdToken(idToken);
-    req.user = decodedToken;
-    next();
-  } catch (error) {
-    console.error(error);
-    res.status(403).send('Oopss, pengguna belum terautentikasi');
-  }
-};
-
 // Route untuk prediksi burung
-app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
+app.post('/predict', upload.single('image'), async (req, res) => {
   if (!req.file) {
     return res.status(400).send('No file uploaded.');
   }
@@ -65,9 +47,7 @@ app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
     }
 
     // Simpan hasil prediksi ke Firestore
-    const userId = req.user.uid;
     const docRef = await db.collection('predictions').add({
-      userId,
       JenisBurung,
       Deskripsi,
       Famili,
@@ -76,7 +56,7 @@ app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
     });
 
-     // Mengembalikan respons
+    // Mengembalikan respons
     res.status(200).json({
       id: docRef.id,
       JenisBurung,
@@ -92,9 +72,8 @@ app.post('/predict', verifyToken, upload.single('image'), async (req, res) => {
 });
 
 // Route untuk menambahkan bookmark
-app.post('/bookmark', verifyToken, async (req, res) => {
+app.post('/bookmark', async (req, res) => {
   const { predictionId } = req.body;
-  const userId = req.user.uid;
 
   if (!predictionId) {
     return res.status(400).send('No prediction ID provided.');
@@ -114,7 +93,6 @@ app.post('/bookmark', verifyToken, async (req, res) => {
     }
 
     const bookmarkRef = await db.collection('bookmarks').add({
-      userId,
       predictionId,
       JenisBurung: predictionData.JenisBurung,
       Deskripsi: predictionData.Deskripsi,
@@ -135,8 +113,29 @@ app.post('/bookmark', verifyToken, async (req, res) => {
   }
 });
 
+// Route untuk mendapatkan semua bookmark
+app.get('/bookmarks', async (req, res) => {
+  try {
+    const bookmarksSnapshot = await db.collection('bookmarks').get();
+
+    if (bookmarksSnapshot.empty) {
+      return res.status(404).send('No bookmarks found.');
+    }
+
+    const bookmarks = bookmarksSnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+
+    res.status(200).json(bookmarks);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal server error');
+  }
+});
+
 // Route untuk menghapus bookmark
-app.delete('/bookmark/:id', verifyToken, async (req, res) => {
+app.delete('/bookmark/:id', async (req, res) => {
   const bookmarkId = req.params.id;
 
   try {
