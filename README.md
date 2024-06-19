@@ -3,8 +3,6 @@ Ini adalah deskripsi proyek kamu.
 
 ## Arsitektur Cloud
 
-![Arsitektur Cloud](Asitektur_Cloud.png)
+![Arsitektur Cloud](Arsitektur_Cloud.png)
 
 ## Cara Kerja
-
-Deskripsi mengenai cara kerja proyek kamu.
