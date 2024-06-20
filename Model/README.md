@@ -6,7 +6,7 @@ Hey there! Ready to get this ML model up and running? Follow these simple steps 
 First things first, clone this repo to your local machine:
 ```bash
 git clone https://github.com/Casptone-BirdWatch/birdwatch-cc.git
-cd birdwatch-cc/Model\ ML
+cd birdwatch-cc/Model
 ```
 
 ## Step 2: Download the ML Model
