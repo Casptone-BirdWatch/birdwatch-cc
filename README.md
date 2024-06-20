@@ -16,14 +16,14 @@ To deploy the ML Model and Backend, please follow these steps:
    git clone https://github.com/Casptone-BirdWatch/birdwatch-cc.git
    cd birdwatch-cc/Model
    ```
-2. Follow the instructions in the Model Documentation for deployment.
+2. Follow the instructions in the [Model Documentation](https://github.com/Casptone-BirdWatch/birdwatch-cc/tree/main/Model#readme) for deployment.
 ### Backend Deployment
 1. Clone the Backend repository
    ```bash
    git clone https://github.com/Casptone-BirdWatch/birdwatch-cc.git
    cd birdwatch-cc/Backend
    ```
-2. Follow the instructions in the Backend Documentation for deployment.
+2. Follow the instructions in the [Backend Documentation](https://github.com/Casptone-BirdWatch/birdwatch-cc/tree/main/Backend#readme) for deployment.
 
 ## API Documentation
 Explore our API documentation using the Postman documentation.
