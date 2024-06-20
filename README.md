@@ -1,4 +1,4 @@
-# BirdWatch Documentation
+<h1 align="center"> Cloud BirdWatch Documentation </h1>
 Welcome to the official documentation for BirdWatch! Here you'll find everything you need to know about integrating, deploying, and utilizing our bird classification system.
 
 ## Cloud Architecture
@@ -30,4 +30,4 @@ Explore our API documentation using the Postman documentation.
 
 You can view the documentation [here](https://documenter.getpostman.com/view/34597337/2sA3XJnRJf).
 
-Feel free to contribute or provide feedback. Happy BirdWatch-ing! 🚀
+Feel free to contribute or provide feedback. Happy BirdWatch-ing! 🔍🦅
